@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harpreet Kaur/Video Editor</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+     <!-- Owl Carousel CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+.fa-play-circle{
+    cursor: pointer;
+}
+        /* General styles for the navigation links */
+        .navbar-nav .nav-link {
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #746129;
+            /* Change the color on hover */
+        }
+
+        .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #746129;
+            /* Add an underline effect */
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+
+
+        .cta {
+            background-color: transparent;
+            color: #fff;
+            /* Red */
+            border: 2px solid #e2d6eb;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #746129;
+            color: #fff;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+       
+
+        .hero-content {
+            text-align: center;
+            color: white;           
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            padding-top: 150px;
+        }
+
+        .portfolio-section {
+            padding: 60px 15px;
+        }
+
+        .portfolio-item img {
+            border-radius: 8px;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-toggler {
+            color: white;
+            border-color: white;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .navbar.scrolled {
+            background-color: #111 !important;
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            width: 100px;
+            transition: width 0.3s ease;
+        }
+
+        .navbar .navbar-brand img {
+            width: 200px;
+            transition: width 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .modal-body {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        video {
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .cta-footer {
+            background: linear-gradient(45deg, #746129, #b3a26d);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+    
+     
+        .top-btn {
+            background-color: #e2c366;
+            border:none
+        }
+        
+        .top-btn:hover {
+            background-color: #7e6414;
+        }
+
+        .cta-about {
+            background-color: #e0c573;
+            /* Red */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 5px #d9c075;
+            /* Shadow color */
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-about:active {
+            box-shadow: 0 2px #746129;
+            transform: translateY(3px);
+        }
+
+        .contact-icons a {
+            font-size: 2rem;
+            /* Adjust the size of the icons */
+            margin: 0 15px;
+            color: #000;
+            /* Default color */
+            text-decoration: none;
+        }
+
+        .contact-icons a:hover {
+            color: #007bff;
+            /* Hover color */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .contact-section {
+            background-color: #cbbcd6;
+        }
+        .background-image {
+            background-image: url('bb.png');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            border-radius: 8px;
+        }
+        .video-card {
+            border: none;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .video-card img {
+            border-radius: 8px;
+        }
+        .portfolio-item img {
+            border-radius: 8px;
+        }
+        .cta {
+            background-color: #e2c366;
+            color: white;
+            border: 2px solid #e2c366;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .cta:hover {
+            background-color: #746129;
+            color: white;
+        }
+        .service-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <header id="heading">
+        <nav class="navbar navbar-expand-lg  fixed-top">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#heading">
+                    <img src="logo.png" alt="Company Logo" width="100">
+                </a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <a class="navbar-brand text-white" href="#">
+                            <img src="logo.png" alt="Company Logo" width="70">
+                        </a>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-center">
+                            <li class="nav-item pe-5">
+                                <a class="nav-link text-white fs-4" href="#about" data-bs-dismiss="offcanvas" onclick="scrollToSection('about'); closeOffcanvas();">About</a>
+                            </li>
+                            <li class="nav-item pe-5">
+                                <a class="nav-link text-white fs-4" href="#software" data-bs-dismiss="offcanvas" onclick="scrollToSection('software'); closeOffcanvas();">My Toolkit</a>
+                            </li>
+                            <li class="nav-item pe-5">
+                                <a class="nav-link text-white fs-4" href="#services" data-bs-dismiss="offcanvas" onclick="scrollToSection('services'); closeOffcanvas();">Services</a>
+                            <li class="nav-item pe-5">
+                                <a class="nav-link text-white fs-4" href="#portfolio" data-bs-dismiss="offcanvas" onclick="scrollToSection('portfolio'); closeOffcanvas();">Portfolio</a>
+                            </li>
+                            <li class="nav-item pe-5">
+                                <a class="nav-link text-white fs-4" href="#contact" data-bs-dismiss="offcanvas" onclick="scrollToSection('contact'); closeOffcanvas();">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="background-image"> 
+              <div class="hero-content mt-5">
+            <h1 class="display-2 ">Transform Raw Footage into <br>Entertaining Content</h1>
+
+            <a href="#portfolio" class="btn cta  text-white mt-5 btn-lg">Explore My Work</a>
+        </div>
+        </div>
+      
+    </section>
+
+    <!-- about-section -->
+    <section class=" bg-light " id="about">
+        <div class="container text-center">
+            <div class="row align-items-center justify-content-center gap-3">
+                <h2 class="display-4  animate__animated animate__fadeInDown">About Me</h2>
+                 <!--  -->
+                 <div class="col-md-5">
+                    <img src="about.jpg" alt="About Me" class="img-fluid rounded-circle animate__animated animate__fadeInRight" style="width: 100%;">
+                    </div>
+                <!--  -->
+                <div class="col-md-6">
+                  
+
+                    <p class="fs-3 animate__animated animate__fadeInUp">
+                        Hi, I'm Harpreet Kaur, a passionate video editor with over one year of experience in crafting visually compelling content. 
+                    </p>
+                    <p class="fs-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        I have worked on a variety of projects, including promotional videos, social media contents. My goal is to bring your vision to life and create content that resonates with your audience. Let's work together to create something amazing!
+                    </p>
+                    <a href="https://wa.me/916239197974" target="_blank" class="cta-about">Work With Me</a>
+
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- software i used -->
+    <div class="container-fluid my-5 bg-dark text-white py-5"id="software">
+        <div class="container">
+        <h2 class="text-center display-4 mb-5">
+        Software I Use
+        </h2>
+    
+        <div class="row text-center">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card p-4 shadow">
+                    <h4 class="mt-3">Adobe Premiere Pro</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card p-4 shadow">
+                    <h4 class="mt-3">Adobe After Effects</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card p-4 shadow">
+      
+                    <h4 class="mt-3">Adobe Photoshop</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card p-4 shadow">
+             
+                    <h4 class="mt-3">Adobe Illustrator</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card p-4 shadow">
+    
+                    <h4 class="mt-3">Canva</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card p-4 shadow">
+                   
+                    <h4 class="mt-3">CapCut</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- services -->
+<section class="container py-5" id="services">
+    <h2 class="text-center mb-4">My Services</h2>
+    <div class="owl-carousel owl-theme">
+
+        <div class="item">
+            <div class="service-card bg-white">
+                <i class="bi bi-pencil-square display-4 text-primary"></i>
+                <h4 class="mt-3">Graphic Design</h4>
+                <p>Creative and eye-catching designs for branding, social media, and marketing.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="service-card bg-white">
+                <i class="bi bi-camera-reels display-4 text-danger"></i>
+                <h4 class="mt-3">Video Editing</h4>
+                <p>Professional video editing with transitions, effects, and color grading.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="service-card bg-white">
+                <i class="bi bi-laptop display-4 text-success"></i>
+                <h4 class="mt-3">Web Design</h4>
+                <p>Modern, responsive, and user-friendly website designs with Bootstrap.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="service-card bg-white">
+                <i class="bi bi-brush display-4 text-warning"></i>
+                <h4 class="mt-3">Logo Design</h4>
+                <p>Unique and creative logos that enhance brand identity.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+  
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" style="background: url('banner.jpg') no-repeat center center fixed; background-size: cover;">
+    <div class="container " id="portfolio">
+        <h2 class="display-4 mb-5 text-center text-white animate__animated animate__fadeInUp">See My Edits in Action</h2>
+        <div class="row ">
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal1">
+                    <img src="a.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Instagram Reel</h5>
+                        <p class="card-text">Instagram reel making and editing.</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal2">
+                    <img src="b.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Creative Editing</h5>
+                        <p class="card-text">Creative video shooting and editing.</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal3">
+                    <img src="c.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">YouTube Short</h5>
+                        <p class="card-text">YouTube Short editing.</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd row -->
+        <div class="row ">
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal4">
+                    <img src="4.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Linkedin Reel</h5>
+                        <p class="card-text">Linkedin Reel editing.</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal5">
+                    <img src="5.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Youtube Short</h5>
+                        <p class="card-text">Making Youtube Short</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal6">
+                    <img src="6.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Instagram Reel</h5>
+                        <p class="card-text">Instagram Reel creating and editing.</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3rd row -->
+        <div class="row ">
+            <div class="col-md-4 ">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal7">
+                    <img src="7.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Podcast Editing</h5>
+                        <p class="card-text">Podcast editing short.</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal8">
+                    <img src="8.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Youtube Short</h5>
+                        <p class="card-text">Making Youtube Short</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card video-card position-relative" data-bs-toggle="modal" data-bs-target="#videoModal9">
+                    <img src="9.jpeg" class="card-img-top" alt="Placeholder Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Podcast Editing</h5>
+                        <p class="card-text">Podcast editing</p>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <i class="fas fa-play-circle fa-3x text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+           
+        </div>
+    </div>
+
+    <!-- Video Modals -->
+    <div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal1Label">Instagram Reel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/1ND4SxavGpOMFgCxHHiQ4PsfkPginEF8o/preview" width="100%"
+                    height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModal2" tabindex="-2" aria-labelledby="videoModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal2Label">Creative Editing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/1jzqCZN765NiI6HW6fIQ3j9XCB5T_LMhn/preview" width="100%"
+                    height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal3Label">Podcast Editing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src=" https://drive.google.com/file/d/1ocdoWbXrxUT1JfezCVPxLeUrO9il_9F8/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="videoModal4" tabindex="-1" aria-labelledby="videoModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal4Label">Linkedin Reel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/1_To_h_xoe670pgN5A-m7LQpOxHsc-T20/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal5" tabindex="-1" aria-labelledby="videoModal5Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen"">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal5Label">YouTube Short</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="height: 100vh;">
+                    <iframe src="https://drive.google.com/file/d/1dbWFy5j0KejKyvLmIh0IwYyF1jqL_K6q/preview" width="100%" height="100%" allow="autoplay" style="height: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal6" tabindex="-1" aria-labelledby="videoModal6Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal6Label">Instagram Reel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/168Z1GiT2V7Z7fgjLQxgBRkkNhn48xT_f/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal7" tabindex="-1" aria-labelledby="videoModal7Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal7Label">Podcast Editing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/1mLOACXERFu9y4F80fQ04dhU7lH1oJ3rZ/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal8" tabindex="-1" aria-labelledby="videoModal8Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal8Label">YouTube Short</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/11iz8HNgxeAwlursXJqV8plZnrNII7I3M/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal9" tabindex="-1" aria-labelledby="videoModal9Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal9Label">Podcast Editing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://drive.google.com/file/d/18mFRlCocG_OVrvhxA-VkKbjxrnpQrTmM/preview"  width="100%" height="100%" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+</section>
+
+    <div class="contact-section justify-content-center align-items-center py-5" id="contact">
+        <div class="container text-center py-5">
+            <h2 class="display-4 mb-4">Contact Me</h2>
+            <p class="fs-4 ">Get in touch today, and let's embark on this exciting adventure together.</p>
+            <div class="contact-icons mt-5 d-flex justify-content-center gap-4">
+                <!-- Phone Icon -->
+                <a href="tel:+916239197974" title="Call Us" class="text-dark">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <!-- WhatsApp Icon -->
+                <a href="https://wa.me/916239197974" target="_blank" title="Chat on WhatsApp" class="text-success">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <!-- Email Icon -->
+                <a href="mailto:harpreet15986@gmail.com" title="Send an Email" class="text-primary">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <style>
+        .contact-icons a {
+            transition: transform 0.3s ease;
+        }
+        .contact-icons a:hover {
+            transform: scale(1.2);
+        }
+    </style>
+
+    </div>
+    </div>
+    </div>
+  
+    <!-- Footer Section -->
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>&copy; <span id="currentYear"></span> Harpreet Kaur. All Rights Reserved.</p>
+    </footer>
+    <!--  -->
+    <a href="#" id="scrollToTop"
+        class="btn btn-primary top-btn text-white rounded-circle d-none align-items-center justify-content-center position-fixed"
+        style="bottom: 80px; right: 20px; width: 50px; height: 50px; z-index: 1000;">
+        <i class="bi bi-arrow-up fs-3"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 15,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            responsive:{
+                0:{ items:1 },
+                768:{ items:2 },
+                1024:{ items:3 }
+            }
+        });
+    });
+</script>
+    <script>
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                const logo = document.querySelector('.navbar-brand img');
+    
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+    
+            function scrollToSection(id) {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            function closeOffcanvas() {
+                const offcanvas = document.querySelector('.offcanvas');
+                const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                bsOffcanvas.hide();
+            }
+        </script>
+
+    <script>
+        const videoModals = [
+            'videoModal1',
+            'videoModal2',
+            'videoModal3',
+            'videoModal4',
+            'videoModal5',
+            'videoModal6',
+            'videoModal7',
+            'videoModal8',
+            'videoModal9'
+        ];
+
+        videoModals.forEach(modalId => {
+            const modalElement = document.getElementById(modalId);
+            if (modalElement) {
+                modalElement.addEventListener('hidden.bs.modal', () => {
+                    const iframe = modalElement.querySelector('iframe');
+                    if (iframe) {
+                        const iframeSrc = iframe.src;
+                        iframe.src = iframeSrc; // Reset the iframe source to stop the video
+                    }
+                });
+            }
+        });  
+    </script>
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+        const scrollToTop = document.getElementById("scrollToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTop.classList.remove("d-none");
+                scrollToTop.classList.add("d-flex");
+            } else {
+                scrollToTop.classList.remove("d-flex");
+                scrollToTop.classList.add("d-none");
+            }
+        });
+    </script>
+</body>
+
+</html>
